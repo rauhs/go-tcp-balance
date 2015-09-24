@@ -32,7 +32,7 @@ For this to work you need `nrpe` client installed.
 The load balancer then runs the nrpe command `check_load` which must be
 configured like this in `nrpe.cfg`:
 
-    command[check_load]=/usr/lib64/nagios/plugins/check_load -w $ARG1$ -c $ARG2$
+    command[check_load]=/usr/lib64/nagios/plugins/check_load -w 15,10,5 -c 30,25,20 
 
 This will return the one minute load and forward the client to the server that
 still has the most load free.
